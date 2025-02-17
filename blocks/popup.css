@@ -1,0 +1,32 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup__container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.popup.opened {
+  display: flex;
+}
+
+.popup__button-close {
+  height: 40px;
+  left: 66.15%;
+  right: 30.73%;
+  top: 175px;
+
+  transform: rotate(-45deg);
+}

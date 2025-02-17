@@ -1,0 +1,13 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 21px 17px;
+  margin-top: 118px;
+  max-width: 880px;
+  width: 100%;
+}
+
+.gallery__card-image {
+  max-width: 282px;
+  width: 100%;
+}
