@@ -18,7 +18,46 @@
   width: 300px;
 }
 
-.popup.opened {
+.popup__form-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.popup__form-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.popup__form-occupation {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.popup__form-button {
+  background: #000000;
+  border-radius: 2px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.popup_opened {
   display: flex;
 }
 
@@ -27,6 +66,5 @@
   left: 66.15%;
   right: 30.73%;
   top: 175px;
-
   transform: rotate(-45deg);
 }

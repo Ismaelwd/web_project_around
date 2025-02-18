@@ -1,16 +1,23 @@
 .profile {
   display: flex;
+  align-items: center;
   max-width: 880px;
   width: 100%;
-  align-items: center;
 }
 .profile__content {
   display: flex;
+  justify-content: space-between;
   max-width: 880px;
   width: 100%;
 }
 
 .profile__info {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.contnuevo {
   margin-left: 30px;
 }
 
@@ -41,11 +48,23 @@
   height: 24px;
   border: 1px solid #ffffff;
   background-image: url("../images/edit-button.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  margin-bottom: 32px;
+  margin-left: 18px;
 }
 
-.profile__button-add {
+.profile__info-button_add {
+  box-sizing: border-box;
   width: 150px;
   height: 50px;
   left: 930px;
   top: 194px;
+  background-image: url("../images/cross.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
 }

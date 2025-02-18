@@ -8,22 +8,25 @@ const displayName = document.querySelector(".profile__info-name");
 const displayDescription = document.querySelector(".profile__info-description");
 const buttonSubmit = document.querySelector(".popup__form-button");
 
-nameInput.value = "Jacques Cousteau";
-jobInput.value = "Explorador";
+nameInput.value = displayName.textContent;
+jobInput.value = displayDescription.textContent;
 
-buttonPopup.addEventListener("click", () => {
-  openPopup.classList.add("opened");
-});
+function handlePopupOpen() {
+  openPopup.classList.add("popup_opened");
+}
 
-buttonClosePopup.addEventListener("click", () => {
-  openPopup.classList.remove("opened");
-});
+function handlePopupClose() {
+  openPopup.classList.remove("popup_opened");
+}
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   displayName.textContent = nameInput.value;
   displayDescription.textContent = jobInput.value;
-  openPopup.classList.remove("opened");
+  openPopup.classList.remove("popup_opened");
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);
+
+buttonPopup.addEventListener("click", handlePopupOpen);
+buttonClosePopup.addEventListener("click", handlePopupClose);

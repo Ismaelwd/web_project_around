@@ -7,7 +7,34 @@
   width: 100%;
 }
 
+.gallery__card {
+  background: #ffffff;
+  border-radius: 10px;
+  height: 361px;
+}
 .gallery__card-image {
   max-width: 282px;
   width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.gallery__card-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-top: 25px;
+  margin-left: 21px;
+}
+
+.gallery__card-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery__card-like {
+  display: flex;
+  margin-right: 21px;
 }

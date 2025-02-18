@@ -18,20 +18,22 @@
       <main class="content">
         <section class="profile">
           <div class="profile__content">
-            <div class="profile__content-avatar">
-              <img
-                src="./images/photo-profile.png"
-                alt="avatar"
-                class="profile__content-avatar_image"
-              />
-            </div>
             <div class="profile__info">
-              <h1 class="profile__info-name">Jacques Cousteau</h1>
-              <p class="profile__info-description">Explorador</p>
+              <div class="profile__content-avatar">
+                <img
+                  src="./images/photo-profile.png"
+                  alt="avatar"
+                  class="profile__content-avatar_image"
+                />
+              </div>
+              <div class="contnuevo">
+                <h1 class="profile__info-name">Jacques Cousteau</h1>
+                <p class="profile__info-description">Explorador</p>
+              </div>
+              <div class="profile__info-button_info"></div>
             </div>
-            <div class="profile__info-button_info"></div>
-            <button class="profile__info-button_add">2</button>
           </div>
+          <div class="profile__info-button_add"></div>
         </section>
         <section class="gallery">
           <div class="gallery__card">
@@ -40,6 +42,10 @@
               src="./images/yosemite.jpg"
               alt="Valle de Yosemite"
             />
+            <div class="gallery__card-text">
+              <p class="gallery__card-name">Valle de Yosemite</p>
+              <img class="gallery__card-like" src="./images/like.svg" />
+            </div>
           </div>
           <div class="gallery__card">
             <img
@@ -47,6 +53,10 @@
               src="./images/louise.png"
               alt="Lago Louise"
             />
+            <div class="gallery__card-text">
+              <p class="gallery__card-name">Lago Louise</p>
+              <img class="gallery__card-like" src="./images/like.svg" />
+            </div>
           </div>
           <div class="gallery__card">
             <img
@@ -54,6 +64,14 @@
               src="./images/montañas-calvas.png"
               alt="Montañas Calvas"
             />
+            <div class="gallery__card-text">
+              <p class="gallery__card-name">Montañas Calvas</p>
+              <img
+                class="gallery__card-like"
+                src="./images/like.svg"
+                alt="Corazon de like"
+              />
+            </div>
           </div>
           <div class="gallery__card">
             <img
@@ -61,6 +79,14 @@
               src="./images/latemar.png"
               alt="Latemar"
             />
+            <div class="gallery__card-text">
+              <p class="gallery__card-name">Latemar</p>
+              <img
+                class="gallery__card-like"
+                src="./images/like.svg"
+                alt="Corazon de like"
+              />
+            </div>
           </div>
           <div class="gallery__card">
             <img
@@ -68,12 +94,26 @@
               src="./images/vanois.png"
               alt="Vanois National..."
             />
+            <div class="gallery__card-text">
+              <p class="gallery__card-name">Vanois National...</p>
+              <img
+                class="gallery__card-like"
+                src="./images/like.svg"
+                alt="Corazon de like"
+              />
+            </div>
           </div>
           <div class="gallery__card">
             <img
               class="gallery__card-image"
               src="./images/braies.png"
               alt="Lago di Braes"
+            />
+            <p class="gallery__card-name">Lago di Braes</p>
+            <img
+              class="gallery__card-like"
+              src="./images/like.svg"
+              alt="Corazon de like"
             />
           </div>
         </section>
