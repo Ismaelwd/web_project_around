@@ -4,8 +4,10 @@ const buttonClosePopup = document.querySelector(".popup__button-close");
 const formElement = document.querySelector(".popup__form");
 const nameInput = document.querySelector(".popup__form-name");
 const jobInput = document.querySelector(".popup__form-occupation");
-const displayName = document.querySelector(".profile__info-name");
-const displayDescription = document.querySelector(".profile__info-description");
+const displayName = document.querySelector(".profile__details-name");
+const displayDescription = document.querySelector(
+  ".profile__details-description"
+);
 const buttonSubmit = document.querySelector(".popup__form-button");
 
 // nameInput.value = displayName.textContent;

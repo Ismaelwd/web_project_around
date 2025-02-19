@@ -11,12 +11,8 @@
   width: 100%;
 }
 
-.profile__avatar {
-}
-
 .profile__info {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
@@ -136,7 +132,7 @@
   .profile__info-button {
     margin-bottom: 40px;
     margin-left: 6px;
-    grid-column: 3 / 4;
+    grid-column: 2 / 4;
     grid-row: 2 / 3;
   }
 

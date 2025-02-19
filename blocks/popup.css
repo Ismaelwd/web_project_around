@@ -48,9 +48,6 @@
   max-width: 358px;
   width: 100%;
   margin-bottom: 30px;
-  border: none;
-  opacity: 0.2;
-  border-bottom: 1px solid #000000;
 }
 
 .popup__form-occupation {
@@ -63,9 +60,6 @@
   max-width: 358px;
   width: 100%;
   margin-bottom: 48px;
-  border: none;
-  opacity: 0.2;
-  border-bottom: 1px solid #000000;
 }
 
 .popup__form-button {
@@ -108,5 +102,15 @@
     max-width: 238px;
     width: 100%;
     height: 46px;
+  }
+
+  .popup__form-name {
+    max-width: 238px;
+    width: 100%;
+  }
+
+  .popup__form-occupation {
+    max-width: 238px;
+    width: 100%;
   }
 }

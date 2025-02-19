@@ -48,14 +48,14 @@
   background-repeat: no-repeat;
 }
 
-.gallery__card-like:hover {
-  opacity: 0.5;
-}
-
 .gallery__card-like:active {
   background: url(../images/like-black.svg);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.gallery__card-like:hover {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 880px) {
