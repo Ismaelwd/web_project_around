@@ -11,6 +11,9 @@
   width: 100%;
 }
 
+.profile__avatar {
+}
+
 .profile__info {
   display: flex;
   flex-direction: row;
@@ -47,12 +50,17 @@
   width: 24px;
   height: 24px;
   border: 1px solid #ffffff;
-  background-image: url("../images/edit-button.png");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: 10px 10px;
   margin-bottom: 32px;
   margin-left: 18px;
+  background: none;
+  background-image: url("../images/edit-button.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile__info-button:hover {
+  opacity: 0.5;
 }
 
 .profile__info-button-add {
@@ -61,39 +69,48 @@
   height: 50px;
   left: 930px;
   top: 194px;
-  background-image: url("../images/cross.png");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: 22px 22px;
   border: 2px solid #ffffff;
   border-radius: 2px;
+  background: none;
+  background-image: url("../images/cross.png");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 544px) {
+.profile__info-button-add:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 880px) {
   .profile {
     max-width: 282px;
     width: 100%;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 
   .profile__content {
-    display: flex;
-    justify-content: center;
+    display: grid;
   }
 
   .profile__info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-column: 2 / 5;
+  }
+
+  .profile__avatar {
+    margin-bottom: 30px;
+    display: grid;
+    grid-row: 1 / 2;
+    justify-self: center;
   }
 
   .profile__details {
     margin-left: 0;
-  }
-
-  .profile__details-container {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-row: 2 / 3;
   }
 
   .profile__details-name {
@@ -117,8 +134,17 @@
   }
 
   .profile__info-button {
-    margin-bottom: 0;
-    margin-left: 0;
-    align-self: flex;
+    margin-bottom: 40px;
+    margin-left: 6px;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .profile__info-button-add {
+    max-width: 282px;
+    width: 100%;
+    margin-top: 36px;
+    display: grid;
+    grid-column: 1 / 5;
   }
 }

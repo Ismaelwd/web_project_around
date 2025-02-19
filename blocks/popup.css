@@ -98,10 +98,15 @@
   margin-bottom: 350px;
 }
 
-@media screen and (max-width: 544px) {
-  .footer {
-    max-width: 320px;
+@media screen and (max-width: 880px) {
+  .popup__container {
+    max-width: 282px;
     width: 100%;
-    margin-top: 64px;
+  }
+
+  .popup__form-button {
+    max-width: 238px;
+    width: 100%;
+    height: 46px;
   }
 }

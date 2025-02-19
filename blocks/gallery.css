@@ -48,19 +48,23 @@
   background-repeat: no-repeat;
 }
 
+.gallery__card-like:hover {
+  opacity: 0.5;
+}
+
 .gallery__card-like:active {
   background: url(../images/like-black.svg);
   background-position: center;
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 544px) {
+@media screen and (max-width: 880px) {
   .gallery {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 21px 17px;
     margin-top: 50px;
-    max-width: 880px;
+    max-width: 282px;
     width: 100%;
   }
 }
