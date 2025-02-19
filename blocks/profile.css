@@ -13,15 +13,15 @@
 
 .profile__info {
   display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.profile__details {
   margin-left: 30px;
 }
 
-.contnuevo {
-  margin-left: 30px;
-}
-
-.profile__info-name {
+.profile__details-name {
   margin: 0;
   margin-bottom: 16px;
   font-family: "Inter";
@@ -32,7 +32,7 @@
   color: #ffffff;
 }
 
-.profile__info-description {
+.profile__details-description {
   margin: 0;
   font-family: "Inter";
   font-style: normal;
@@ -42,7 +42,7 @@
   color: #ffffff;
 }
 
-.profile__info-button_info {
+.profile__info-button {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
@@ -55,7 +55,7 @@
   margin-left: 18px;
 }
 
-.profile__info-button_add {
+.profile__info-button-add {
   box-sizing: border-box;
   width: 150px;
   height: 50px;
@@ -67,4 +67,58 @@
   background-size: 22px 22px;
   border: 2px solid #ffffff;
   border-radius: 2px;
+}
+
+@media screen and (max-width: 544px) {
+  .profile {
+    max-width: 282px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .profile__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile__details {
+    margin-left: 0;
+  }
+
+  .profile__details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile__details-name {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .profile__details-description {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .profile__info-button {
+    margin-bottom: 0;
+    margin-left: 0;
+    align-self: flex;
+  }
 }
