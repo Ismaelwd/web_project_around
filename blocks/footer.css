@@ -22,14 +22,4 @@
     max-width: 282px;
     width: 100%;
   }
-
-  .footer__copyright {
-    margin-left: 19px;
-  }
-}
-
-@media screen and (max-width: 885px) {
-  .footer__copyright {
-    margin-left: 19px;
-  }
 }

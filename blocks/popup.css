@@ -123,8 +123,7 @@
   }
 
   .popup__button-close {
-    display: flex;
-    align-self: flex-end;
+    margin-left: 260px;
     margin-bottom: 0;
   }
 }
