@@ -94,6 +94,7 @@
   .profile__info {
     display: grid;
     grid-column: 2 / 5;
+    margin-left: 22px;
   }
 
   .profile__avatar {

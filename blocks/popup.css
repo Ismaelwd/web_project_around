@@ -92,7 +92,15 @@
   margin-bottom: 350px;
 }
 
+.popup__button-close:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 880px) {
+  .popup_opened {
+    flex-direction: column-reverse;
+  }
+
   .popup__container {
     max-width: 282px;
     width: 100%;
@@ -112,5 +120,11 @@
   .popup__form-occupation {
     max-width: 238px;
     width: 100%;
+  }
+
+  .popup__button-close {
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 0;
   }
 }
