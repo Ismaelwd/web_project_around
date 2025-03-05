@@ -36,17 +36,19 @@
           <button class="profile__info-button-add"></button>
         </section>
         <section class="gallery">
-          <div class="gallery__card">
-            <img
-              class="gallery__card-image"
-              src="./images/yosemite.jpg"
-              alt="Valle de Yosemite"
-            />
-            <div class="gallery__card-text">
-              <p class="gallery__card-name">Valle de Yosemite</p>
-              <img class="gallery__card-like" src="images/like.svg" />
+          <template class="gallery__template" id="template">
+            <div class="gallery__card">
+              <img
+                class="gallery__card-image"
+                src="./images/yosemite.jpg"
+                alt="Valle de Yosemite"
+              />
+              <div class="gallery__card-text">
+                <p class="gallery__card-name">Valle de Yosemite</p>
+                <img class="gallery__card-like" src="images/like.svg" />
+              </div>
             </div>
-          </div>
+          </template>
           <div class="gallery__card">
             <img
               class="gallery__card-image"
@@ -141,6 +143,29 @@
             </form>
           </div>
           <div class="popup__button-close"></div>
+        </section>
+        <section class="popup-add">
+          <div class="popup-add__container">
+            <h2 class="popup-add__form-title">Nuevo Lugar</h2>
+            <form class="popup-add__form">
+              <input
+                class="popup-add__form-name"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Título"
+              />
+              <input
+                class="popup-add__form-occupation"
+                type="text"
+                id="occupation"
+                name="occupation"
+                placeholder="Enlace a la imagen"
+              />
+              <button class="popup-add__form-button">Guardar</button>
+            </form>
+          </div>
+          <div class="popup-add__button-close"></div>
         </section>
       </main>
       <footer class="footer">

@@ -1,0 +1,135 @@
+.popup-add {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-add__container {
+  max-width: 430px;
+  width: 100%;
+  max-height: 330px;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.popup-add__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-add__form-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin: 0;
+  margin-left: 36px;
+  margin-top: 34px;
+  margin-bottom: 54px;
+}
+
+.popup-add__form-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  max-width: 358px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.popup-add__form-occupation {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  max-width: 358px;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.popup-add__form-button {
+  background: #000000;
+  border-radius: 2px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+  max-width: 358px;
+  width: 100%;
+  height: 56px;
+}
+
+.popup-add__form-button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.popup-add_opened {
+  display: flex;
+}
+
+.popup-add__button-close {
+  height: 40px;
+  transform: rotate(-45deg);
+  background-image: url("../images/cross.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 350px;
+}
+
+.popup-add__button-close:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 880px) {
+  .popup-add_opened {
+    flex-direction: column-reverse;
+  }
+
+  .popup-add__container {
+    max-width: 282px;
+    width: 100%;
+  }
+
+  .popup-add__form-button {
+    max-width: 238px;
+    width: 100%;
+    height: 46px;
+  }
+
+  .popup-add__form-name {
+    max-width: 238px;
+    width: 100%;
+  }
+
+  .popup-add__form-occupation {
+    max-width: 238px;
+    width: 100%;
+  }
+
+  .popup-add__button-close {
+    margin-left: 260px;
+    margin-bottom: 0;
+  }
+}
