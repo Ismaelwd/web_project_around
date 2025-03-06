@@ -1,5 +1,6 @@
 .gallery {
   display: grid;
+  flex-wrap: wrap;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 21px 17px;
   margin-top: 50px;
@@ -14,11 +15,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  position: relative;
 }
 .gallery__card-image {
   max-width: 282px;
   width: 100%;
   border-radius: 10px 10px 0px 0px;
+  max-height: 282px;
+  min-height: 282px;
 }
 
 .gallery__card-name {
@@ -56,6 +60,13 @@
 
 .gallery__card-like:hover {
   opacity: 0.5;
+}
+
+.gallery__card-delete {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 0;
 }
 
 @media screen and (max-width: 880px) {

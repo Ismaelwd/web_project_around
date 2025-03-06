@@ -35,92 +35,7 @@
           </div>
           <button class="profile__info-button-add"></button>
         </section>
-        <section class="gallery">
-          <template class="gallery__template" id="template">
-            <div class="gallery__card">
-              <img
-                class="gallery__card-image"
-                src="./images/yosemite.jpg"
-                alt="Valle de Yosemite"
-              />
-              <div class="gallery__card-text">
-                <p class="gallery__card-name">Valle de Yosemite</p>
-                <img class="gallery__card-like" src="images/like.svg" />
-              </div>
-            </div>
-          </template>
-          <div class="gallery__card">
-            <img
-              class="gallery__card-image"
-              src="./images/louise.png"
-              alt="Lago Louise"
-            />
-            <div class="gallery__card-text">
-              <p class="gallery__card-name">Lago Louise</p>
-              <img class="gallery__card-like" src="./images/like.svg" />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              class="gallery__card-image"
-              src="./images/montanas-calvas.png"
-              alt="Montañas Calvas"
-            />
-            <div class="gallery__card-text">
-              <p class="gallery__card-name">Montañas Calvas</p>
-              <img
-                class="gallery__card-like"
-                src="./images/like.svg"
-                alt="Corazon de like"
-              />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              class="gallery__card-image"
-              src="./images/latemar.png"
-              alt="Latemar"
-            />
-            <div class="gallery__card-text">
-              <p class="gallery__card-name">Latemar</p>
-              <img
-                class="gallery__card-like"
-                src="./images/like.svg"
-                alt="Corazon de like"
-              />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              class="gallery__card-image"
-              src="./images/vanois.png"
-              alt="Vanois National..."
-            />
-            <div class="gallery__card-text">
-              <p class="gallery__card-name">Vanois National Park</p>
-              <img
-                class="gallery__card-like"
-                src="./images/like.svg"
-                alt="Corazon de like"
-              />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              class="gallery__card-image"
-              src="./images/braies.png"
-              alt="Lago di Braes"
-            />
-            <div class="gallery__card-text">
-              <p class="gallery__card-name">Lago di Braes</p>
-              <img
-                class="gallery__card-like"
-                src="./images/like.svg"
-                alt="Corazon de like"
-              />
-            </div>
-          </div>
-        </section>
+        <section class="gallery"></section>
         <section class="popup">
           <div class="popup__container">
             <h2 class="popup__form-title">Editar Perfil</h2>
@@ -157,7 +72,7 @@
               />
               <input
                 class="popup-add__form-occupation"
-                type="text"
+                type="url"
                 id="occupation"
                 name="occupation"
                 placeholder="Enlace a la imagen"
@@ -172,6 +87,16 @@
         <p class="footer__copyright">© 2024 Around The U.S.</p>
       </footer>
     </div>
+    <template class="gallery__template" id="template">
+      <div class="gallery__card">
+        <img class="gallery__card-image" src="" alt="" />
+        <button type="button" class="gallery__card-delete">Hola</button>
+        <div class="gallery__card-text">
+          <p class="gallery__card-name"></p>
+          <img class="gallery__card-like" src="images/like.svg" />
+        </div>
+      </div>
+    </template>
     <script src="./scripts/index.js" defer></script>
   </body>
 </html>
