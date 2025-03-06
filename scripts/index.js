@@ -89,6 +89,7 @@ function createCard(name, link) {
   const cardImage = card.querySelector(".gallery__card-image");
   const cardText = card.querySelector(".gallery__card-name");
   const deleteButton = card.querySelector(".gallery__card-delete");
+  const like = card.querySelector(".gallery__card-like");
 
   cardImage.src = link;
   cardImage.alt = name;
@@ -96,6 +97,9 @@ function createCard(name, link) {
 
   deleteButton.addEventListener("click", () => {
     card.remove();
+  });
+  like.addEventListener("click", () => {
+    like.classList.toggle("gallery__card-like-active");
   });
 
   return card;
