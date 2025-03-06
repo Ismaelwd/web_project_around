@@ -18,6 +18,7 @@ const gallery = document.querySelector(".gallery");
 const formAdd = document.querySelector(".popup-add__form");
 const descriptionInput = document.querySelector(".popup-add__form-name");
 const imageInput = document.querySelector(".popup-add__form-occupation");
+const deleteButton = document.querySelector(".gallery__card-delete");
 
 const initialCards = [
   {
@@ -67,8 +68,6 @@ function handleProfileFormSubmit(evt) {
   openPopup.classList.remove("popup_opened");
 }
 
-//
-
 function handlePopupAddOpen() {
   openPopupAdd.classList.add("popup-add_opened");
 }
@@ -104,7 +103,6 @@ function handleImageFormSubmit(evt) {
 }
 
 function deleteCard() {
-  const deleteButton = card.querySelector(".gallery__card-delete");
   deleteButton = card.remove();
 }
 
