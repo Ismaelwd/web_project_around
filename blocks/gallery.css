@@ -52,7 +52,9 @@
   background-repeat: no-repeat;
 }
 
-.gallery__card-like:active {
+.gallery__card-like-active {
+  display: flex;
+  margin-right: 21px;
   background: url(../images/like-black.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -63,8 +65,8 @@
 }
 
 .gallery__card-delete {
+  margin-right: 15px;
   position: absolute;
-  z-index: 2;
   top: 20px;
   right: 0;
 }

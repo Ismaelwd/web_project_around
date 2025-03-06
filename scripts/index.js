@@ -18,7 +18,6 @@ const gallery = document.querySelector(".gallery");
 const formAdd = document.querySelector(".popup-add__form");
 const descriptionInput = document.querySelector(".popup-add__form-name");
 const imageInput = document.querySelector(".popup-add__form-occupation");
-const deleteButton = document.querySelector(".gallery__card-delete");
 
 const initialCards = [
   {
@@ -89,9 +88,16 @@ function createCard(name, link) {
   const card = templateGallery.querySelector(".gallery__card").cloneNode(true);
   const cardImage = card.querySelector(".gallery__card-image");
   const cardText = card.querySelector(".gallery__card-name");
+  const deleteButton = card.querySelector(".gallery__card-delete");
+
   cardImage.src = link;
   cardImage.alt = name;
   cardText.textContent = name;
+
+  deleteButton.addEventListener("click", () => {
+    card.remove();
+  });
+
   return card;
 }
 
@@ -102,10 +108,6 @@ function handleImageFormSubmit(evt) {
   openPopupAdd.classList.remove("popup-add_opened");
 }
 
-function deleteCard() {
-  deleteButton = card.remove();
-}
-
 buttonPopup.addEventListener("click", handlePopupOpen);
 buttonPopup.addEventListener("click", editProfile);
 buttonClosePopup.addEventListener("click", handlePopupClose);
@@ -114,4 +116,3 @@ buttonAdd.addEventListener("click", handlePopupAddOpen);
 buttonCloseAdd.addEventListener("click", handlePopupAddClose);
 addCards();
 formAdd.addEventListener("submit", handleImageFormSubmit);
-deleteButton.addEventListener("click", deleteCard);
