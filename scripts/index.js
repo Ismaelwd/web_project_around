@@ -119,7 +119,7 @@ function handleImageFormSubmit(evt) {
 //
 
 function handlePopupImageOpen(name, link) {
-  const popupImg = openPopupImage.querySelector(".popup_img");
+  const popupImg = openPopupImage.querySelector(".popup__img");
   const popupText = openPopupImage.querySelector(".popup__text");
   popupImg.src = link;
   popupImg.alt = name;
