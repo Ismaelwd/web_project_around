@@ -18,6 +18,7 @@ const gallery = document.querySelector(".gallery");
 const formAdd = document.querySelector(".popup-add__form");
 const descriptionInput = document.querySelector(".popup-add__form-name");
 const imageInput = document.querySelector(".popup-add__form-occupation");
+const openPopupImage = document.querySelector(".popup__image");
 
 const initialCards = [
   {
@@ -45,7 +46,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
-
+//
 function handlePopupOpen() {
   openPopup.classList.add("popup_opened");
 }
@@ -66,7 +67,7 @@ function handleProfileFormSubmit(evt) {
   displayDescription.textContent = jobInput.value;
   openPopup.classList.remove("popup_opened");
 }
-
+//
 function handlePopupAddOpen() {
   openPopupAdd.classList.add("popup-add_opened");
 }
@@ -112,6 +113,17 @@ function handleImageFormSubmit(evt) {
   openPopupAdd.classList.remove("popup-add_opened");
 }
 
+//
+
+function handlePopupImageOpen(name, link) {
+  const popupImg = openPopupImage.querySelector(".popup_img");
+  const popupText = openPopupImage.querySelector(".popup__text");
+  popupImg.src = link;
+  popupImg.alt = name;
+  popupText.textContent = name;
+  openPopupImage.classList.add("popup-image_opened");
+}
+
 buttonPopup.addEventListener("click", handlePopupOpen);
 buttonPopup.addEventListener("click", editProfile);
 buttonClosePopup.addEventListener("click", handlePopupClose);
@@ -120,3 +132,4 @@ buttonAdd.addEventListener("click", handlePopupAddOpen);
 buttonCloseAdd.addEventListener("click", handlePopupAddClose);
 addCards();
 formAdd.addEventListener("submit", handleImageFormSubmit);
+openPopupImage.addEventListener("click", handlePopupImageOpen);
