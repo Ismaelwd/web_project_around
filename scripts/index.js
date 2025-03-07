@@ -102,7 +102,9 @@ function createCard(name, link) {
   like.addEventListener("click", () => {
     like.classList.toggle("gallery__card-like-active");
   });
-
+  cardImage.addEventListener("click", () => {
+    handlePopupImageOpen(name, link);
+  });
   return card;
 }
 
@@ -121,7 +123,7 @@ function handlePopupImageOpen(name, link) {
   popupImg.src = link;
   popupImg.alt = name;
   popupText.textContent = name;
-  openPopupImage.classList.add("popup-image_opened");
+  openPopupImage.classList.add("popup__image_opened");
 }
 
 buttonPopup.addEventListener("click", handlePopupOpen);
@@ -132,4 +134,3 @@ buttonAdd.addEventListener("click", handlePopupAddOpen);
 buttonCloseAdd.addEventListener("click", handlePopupAddClose);
 addCards();
 formAdd.addEventListener("submit", handleImageFormSubmit);
-openPopupImage.addEventListener("click", handlePopupImageOpen);
