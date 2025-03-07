@@ -25,6 +25,11 @@
   min-height: 282px;
 }
 
+.gallery__card-image:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 .gallery__card-name {
   font-family: "Inter";
   font-style: normal;
@@ -62,6 +67,7 @@
 
 .gallery__card-like:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .gallery__card-delete {
@@ -76,6 +82,11 @@
   position: absolute;
   top: 20px;
   right: 0;
+}
+
+.gallery__card-delete:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 880px) {

@@ -19,6 +19,7 @@ const formAdd = document.querySelector(".popup-add__form");
 const descriptionInput = document.querySelector(".popup-add__form-name");
 const imageInput = document.querySelector(".popup-add__form-occupation");
 const openPopupImage = document.querySelector(".popup__image");
+const imageButtonClose = document.querySelector(".popup__image-button-close");
 
 const initialCards = [
   {
@@ -126,6 +127,10 @@ function handlePopupImageOpen(name, link) {
   openPopupImage.classList.add("popup__image_opened");
 }
 
+function handlePopupImageClose() {
+  openPopupImage.classList.remove("popup__image_opened");
+}
+
 buttonPopup.addEventListener("click", handlePopupOpen);
 buttonPopup.addEventListener("click", editProfile);
 buttonClosePopup.addEventListener("click", handlePopupClose);
@@ -134,3 +139,4 @@ buttonAdd.addEventListener("click", handlePopupAddOpen);
 buttonCloseAdd.addEventListener("click", handlePopupAddClose);
 addCards();
 formAdd.addEventListener("submit", handleImageFormSubmit);
+imageButtonClose.addEventListener("click", handlePopupImageClose);

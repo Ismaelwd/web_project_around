@@ -1,10 +1,10 @@
 # Tripleten web_project_homeland
 
-Proyecto 7 - Javascript básico y DOM
+Proyecto 8 - Logica y metodos de programacion en JavaScript
 
-El objetivo de este proyecto es implementar y optimizar herramientas de diseño responsivo que permitan que la interfaz se adapte de manera eficiente a las diferentes dimensiones y especificaciones definidas en el diseño proporcionado mediante Figma.
+El objetivo de este proyecto es implementar y optimizar la lógica de programación en JavaScript para gestionar dinámicamente tarjetas de contenido, permitiendo su creación, eliminación y la interacción con botones de like y dislike.
 
-En este proyecto, se desarrolló un botón en JavaScript que despliega un popup con el nombre de perfil y la descripción del usuario, permitiendo su edición. Para ello, se adquirieron conocimientos fundamentales del DOM y su manipulación en JavaScript.
+En este proyecto, se adquirieron conocimientos sobre el manejo de Arrays para almacenar tarjetas, Funciones para modularizar el código y Manipulación del DOM para actualizar la interfaz de usuario en tiempo real.
 
 ## Tecnologías utilizadas
 
@@ -15,6 +15,9 @@ En este proyecto, se desarrolló un botón en JavaScript que despliega un popup 
 - **GitHub** como plataforma para el control de versiones y alojamiento del código.
 - **CSS Grid Layout** para estructurar la interfaz.
 - **Sombreados y degradados en CSS** para mejorar el diseño visual.
+- **Arrays** para almacenar y gestionar las tarjetas de contenido.
+- **Funciones** para agregar, eliminar y dar like o dislike a las tarjetas.
+- **Manipulación del DOM** para actualizar la lista de tarjetas en tiempo real.
 
 ## Autor
 
