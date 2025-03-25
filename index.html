@@ -46,15 +46,31 @@
                 id="name"
                 name="name"
                 placeholder="Nombre"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span
+                class="popup__form-name-message validation-message hidden-message"
+                >Please fill out this field</span
+              >
               <input
                 class="popup__form-occupation"
                 type="text"
                 id="occupation"
                 name="occupation"
                 placeholder="Acerca de mi"
+                minlength="2"
+                maxlength="200"
+                required
               />
-              <button class="popup__form-button">Guardar</button>
+              <span
+                class="popup__form-occupation-message validation-message hidden-message"
+                >Please fill out this field</span
+              >
+              <button type="submit" disabled class="popup__form-button">
+                Guardar
+              </button>
             </form>
           </div>
           <div class="popup__button-close"></div>
@@ -69,15 +85,29 @@
                 id="name"
                 name="name"
                 placeholder="Título"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span
+                class="popup-add__form-name-message validation-message hidden-message"
+                >Please fill out this field</span
+              >
               <input
                 class="popup-add__form-occupation"
                 type="url"
                 id="occupation"
                 name="occupation"
                 placeholder="Enlace a la imagen"
+                required
               />
-              <button class="popup-add__form-button">Guardar</button>
+              <span
+                class="popup-add__form-occupation-message validation-message hidden-message"
+                >URL no válida</span
+              >
+              <button type="submit" class="popup-add__form-button" disabled>
+                Guardar
+              </button>
             </form>
           </div>
           <div class="popup-add__button-close"></div>
@@ -107,5 +137,6 @@
       </div>
     </template>
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validate.js" defer></script>
   </body>
 </html>

@@ -50,6 +50,10 @@
   margin-bottom: 30px;
 }
 
+.popup-add__form-name:invalid {
+  border-bottom: 1px solid red;
+}
+
 .popup-add__form-occupation {
   font-family: "Inter";
   font-style: normal;
@@ -60,6 +64,10 @@
   max-width: 358px;
   width: 100%;
   margin-bottom: 48px;
+}
+
+.popup-add__form-occupation:invalid {
+  border-bottom: 1px solid red;
 }
 
 .popup-add__form-button {
@@ -75,6 +83,13 @@
   max-width: 358px;
   width: 100%;
   height: 56px;
+}
+
+.popup-add__form-button:disabled {
+  background-color: transparent;
+  color: #c2c2c2;
+  border-color: #c2c2c2;
+  pointer-events: none;
 }
 
 .popup-add__form-button:hover {
