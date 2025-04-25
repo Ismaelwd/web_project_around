@@ -11,9 +11,9 @@ const formUrlMessage = document.querySelector(
 );
 
 //event listeners de los botones de popups
-buttonPopup.addEventListener("click", () => {
+openPopupButton.addEventListener("click", () => {
   enableValidation({
-    nameSelector: ".popup__form-name",
+    nameSelector: "#name",
     occupationSelector: ".popup__form-occupation",
     errorMessageNameSelector: ".popup__form-name-message",
     errorMessageOccupationSelector: ".popup__form-occupation-message",
@@ -21,7 +21,7 @@ buttonPopup.addEventListener("click", () => {
   });
 });
 
-buttonAdd.addEventListener("click", () => {
+openPopupAddButton.addEventListener("click", () => {
   enableValidation({
     nameSelector: ".popup-add__form-name",
     occupationSelector: ".popup-add__form-occupation",
@@ -33,7 +33,7 @@ buttonAdd.addEventListener("click", () => {
 
 //funcion enableValidation
 function enableValidation(validationData) {
-  const submitButton = document.querySelector(
+  const formSubmitButton = document.querySelector(
     validationData.submitButtonSelector
   );
   //Validate inputTop
@@ -45,10 +45,10 @@ function enableValidation(validationData) {
     const isValid = name.validity.valid;
     if (isValid) {
       formNameMessage.classList.add("hidden-message");
-      submitButton.disabled = false;
+      formSubmitButton.disabled = false;
     } else {
       formNameMessage.classList.remove("hidden-message");
-      submitButton.disabled = true;
+      formSubmitButton.disabled = true;
     }
   });
 
@@ -61,10 +61,10 @@ function enableValidation(validationData) {
     const isValid = occupation.validity.valid;
     if (isValid) {
       formOccupationMessage.classList.add("hidden-message");
-      submitButton.disabled = false;
+      formSubmitButton.disabled = false;
     } else {
       formOccupationMessage.classList.remove("hidden-message");
-      submitButton.disabled = true;
+      formSubmitButton.disabled = true;
     }
   });
 }

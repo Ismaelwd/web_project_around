@@ -1,4 +1,4 @@
-.popup__image {
+.popup-image {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   display: none;
 }
 
-.popup__image-container {
+.popup-image__container {
   max-width: fit-content;
   margin: auto;
   margin-top: 90px;
@@ -28,7 +28,7 @@
   flex-direction: column;
 }
 
-.popup__image-button-close {
+.popup-image__button-close {
   height: 40px;
   transform: rotate(-45deg);
   background-image: url("../images/cross.png");
@@ -41,7 +41,7 @@
   top: -35px;
 }
 
-.popup__image-button-close:hover {
+.popup-image__button-close:hover {
   opacity: 0.5;
   cursor: pointer;
 }
