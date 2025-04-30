@@ -1,70 +1,81 @@
-//constantes de los mensajes de validacion
-const formNameMessage = document.querySelector(".popup__form-name-message");
-const formOccupationMessage = document.querySelector(
-  ".popup__form-occupation-message"
-);
-const formTitleMessage = document.querySelector(
-  ".popup-add__form-name-message"
-);
-const formUrlMessage = document.querySelector(
-  ".popup-add__form-occupation-message"
-);
-
-//event listeners de los botones de popups
-openPopupButton.addEventListener("click", () => {
-  enableValidation({
-    nameSelector: "#name",
-    occupationSelector: ".popup__form-occupation",
-    errorMessageNameSelector: ".popup__form-name-message",
-    errorMessageOccupationSelector: ".popup__form-occupation-message",
-    submitButtonSelector: ".popup__form-button",
-  });
+enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__form-input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: ".popup__input_type_error",
+  errorClass: "popup__error",
 });
 
-openPopupAddButton.addEventListener("click", () => {
-  enableValidation({
-    nameSelector: ".popup-add__form-name",
-    occupationSelector: ".popup-add__form-occupation",
-    errorMessageNameSelector: ".popup-add__form-name-message",
-    errorMessageOccupationSelector: ".popup-add__form-occupation-message",
-    submitButtonSelector: ".popup-add__form-button",
-  });
-});
-
-//funcion enableValidation
 function enableValidation(validationData) {
-  const formSubmitButton = document.querySelector(
-    validationData.submitButtonSelector
-  );
-  //Validate inputTop
-  const name = document.querySelector(validationData.nameSelector);
-  const formNameMessage = document.querySelector(
-    validationData.errorMessageNameSelector
-  );
-  name.addEventListener("input", (event) => {
-    const isValid = name.validity.valid;
-    if (isValid) {
-      formNameMessage.classList.add("hidden-message");
-      formSubmitButton.disabled = false;
-    } else {
-      formNameMessage.classList.remove("hidden-message");
-      formSubmitButton.disabled = true;
-    }
-  });
-
-  //validate inputBottom
-  const occupation = document.querySelector(validationData.occupationSelector);
-  const formOccupationMessage = document.querySelector(
-    validationData.errorMessageOccupationSelector
-  );
-  occupation.addEventListener("input", (event) => {
-    const isValid = occupation.validity.valid;
-    if (isValid) {
-      formOccupationMessage.classList.add("hidden-message");
-      formSubmitButton.disabled = false;
-    } else {
-      formOccupationMessage.classList.remove("hidden-message");
-      formSubmitButton.disabled = true;
-    }
+  const forms = document.querySelectorAll(validationData.formSelector);
+  forms.forEach(function (form) {
+    form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+    setEventListeners(form, validationData);
   });
 }
+
+function setEventListeners(form, validationData) {
+  //4
+  const elements = Array.from(
+    form.querySelectorAll(validationData.inputSelector)
+  );
+  const button = form.querySelector(validationData.submitButtonSelector);
+  toggleButtonState(elements, button);
+
+  elements.forEach((element) => {
+    //5
+    element.addEventListener("input", () => {
+      //6
+      toggleButtonState(elements, button);
+      checkInputValidity(element, validationData);
+    });
+  });
+}
+
+function checkInputValidity(inputElement, validationData) {
+  const isValid = inputElement.validity.valid;
+  if (!isValid) {
+    inputElement.classList.add(validationData.inputErrorClass);
+    showInputError(inputElement, validationData);
+  } else {
+    inputElement.classList.remove(validationData.inputErrorClass);
+    hideInputError(inputElement, validationData);
+  }
+}
+
+function hasInvalidInput(inputList) {
+  const isValid = inputList.every((input) => input.validity.valid);
+  return isValid;
+}
+
+function toggleButtonState(inputElements, buttonElement) {
+  const isValid = hasInvalidInput(inputElements);
+  if (isValid) {
+    buttonElement.disabled = false;
+  } else {
+    buttonElement.disabled = true;
+  }
+}
+
+function showInputError(inputElement, validationData) {
+  const formMessage = document.querySelector(
+    `.${validationData.errorClass}_${inputElement.id}`
+  );
+  // console.log(formMessage.textContent);
+  formMessage.textContent = inputElement.validationMessage;
+}
+
+function hideInputError(inputElement, validationData) {
+  const formMessage = document.querySelector(
+    `.${validationData.errorClass}_${inputElement.id}`
+  );
+  formMessage.textContent = "";
+}
+
+// class FormValidator {
+//   constructor(classSelectorContainer, elementValidator)
+
+// }

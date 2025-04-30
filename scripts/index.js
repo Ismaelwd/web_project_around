@@ -14,19 +14,21 @@ const closePopupImageButton = document.querySelector(
 );
 //Popups
 const popupElement = document.querySelector(".popup");
-const popupAddElement = document.querySelector(".popup.popup-add");
+const popupAddElement = document.querySelector("#popup-add");
 const popupImageElement = document.querySelector(".popup-image");
-//sección gallery
-const gallery = document.querySelector(".gallery");
+
 //Popup content
 const formElement = document.querySelector(".popup__form");
-const formAddElement = document.querySelector(".popup-add__form");
+const inputElement = document.querySelector(".popup__form-input");
+const formAddElement = document.querySelector("#form-add");
 const nameInput = document.querySelector("#name");
-const jobInput = document.querySelector(".popup__form-occupation");
-const descriptionInput = document.querySelector(".popup-add__form-name");
-const imageInput = document.querySelector(".popup-add__form-occupation");
-const submitButton = document.querySelector(".popup__form-button");
-const submitAddButton = document.querySelector(".popup-add__form-button");
+const jobInput = document.querySelector("#occupation");
+const descriptionInput = document.querySelector("#description");
+const imageInput = document.querySelector("#image");
+const submitButton = document.querySelector(".popup__button");
+
+//sección gallery
+const gallery = document.querySelector(".gallery");
 
 //Array de fotos
 const initialCards = [
@@ -55,10 +57,12 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
+
 //función que abre el popup
 function handlePopupOpen(openPopup) {
   openPopup.classList.add("popup_opened");
 }
+
 //cierra
 function handlePopupClose() {
   popupElement.classList.remove("popup_opened");
@@ -78,64 +82,83 @@ function handleProfileFormSubmit(evt) {
   handlePopupClose();
 }
 
+//mismo codigo de la forma pasada
+function handleImageFormSubmit(evt) {
+  evt.preventDefault();
+  const newCard = new Card(
+    descriptionInput.value,
+    imageInput.value,
+    "#template"
+  );
+  gallery.prepend(newCard.getCardElement());
+  formAddElement.reset();
+  handlePopupAddClose();
+}
+
 //Abre el popup-add
 function handlePopupAddOpen() {
   popupAddElement.classList.add("popup-add_opened");
 }
+
 //Cierra
 function handlePopupAddClose() {
   popupAddElement.classList.remove("popup-add_opened");
 }
 
-//Se le aplica un ciclo forEach al array initialCards
-//el contenido de cada {} es un objeto, forEach recorre cada objeto y asigna le contenido al parámetro item en cada iteración
-//
 function addCards() {
   initialCards.forEach((item) => {
-    const card = createCard(item.name, item.link);
-    gallery.append(card);
+    const card = new Card(item.name, item.link, "#template");
+    gallery.append(card.getCardElement());
   });
 }
 
-function createCard(name, link) {
-  const templateGallery = document.querySelector("#template").content;
-  //busca el div gallery_card y cloneNode(true) hace una copia con todos sus hijos
-  const card = templateGallery.querySelector(".gallery__card").cloneNode(true);
-  const cardImage = card.querySelector(".gallery__card-image");
-  const cardText = card.querySelector(".gallery__card-name");
-  const deleteButton = card.querySelector(".gallery__card-delete");
-  const like = card.querySelector(".gallery__card-like");
+class Card {
+  constructor(name, link, templateSelector) {
+    this._name = name;
+    this._link = link;
+    this._templateSelector = templateSelector;
 
-  //asigna el link y name a sus variables correspondientes
-  cardImage.src = link;
-  cardImage.alt = name;
-  cardText.textContent = name;
+    this._getTemplate();
+    this._setCardContent();
+    this._setEventListeners();
+  }
 
-  //Escucha el deleteButton del nodo creado
-  deleteButton.addEventListener("click", () => {
-    card.remove();
-  });
-  //Escucha el like
-  like.addEventListener("click", () => {
-    like.classList.toggle("gallery__card-like-active");
-  });
-  //Escucha el click en la imagen para abrirla
-  cardImage.addEventListener("click", () => {
-    handlePopupImageOpen(name, link);
-  });
+  _getTemplate() {
+    const templateGallery = document.querySelector(
+      this._templateSelector
+    ).content;
+    this._card = templateGallery
+      .querySelector(".gallery__card")
+      .cloneNode(true);
 
-  return card;
+    this._cardImage = this._card.querySelector(".gallery__card-image");
+    this._cardText = this._card.querySelector(".gallery__card-name");
+    this._deleteButton = this._card.querySelector(".gallery__card-delete");
+    this._like = this._card.querySelector(".gallery__card-like");
+  }
+
+  _setCardContent() {
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardText.textContent = this._name;
+  }
+
+  _setEventListeners() {
+    this._deleteButton.addEventListener("click", () => {
+      this._card.remove();
+    });
+    this._like.addEventListener("click", () => {
+      this._like.classList.toggle("gallery__card-like-active");
+    });
+    this._cardImage.addEventListener("click", () => {
+      handlePopupImageOpen(this._name, this._link);
+    });
+  }
+  getCardElement() {
+    return this._card;
+  }
 }
 
-//mismo codigo de la forma pasada
-function handleImageFormSubmit(evt) {
-  evt.preventDefault();
-  const card = createCard(descriptionInput.value, imageInput.value);
-  gallery.prepend(card);
-  handlePopupAddClose();
-}
-
-//Funcion la imagen de la targeta como popup y se corre en la funcion createCard por un eventlistener
 function handlePopupImageOpen(name, link) {
   const popupImg = popupImageElement.querySelector(".popup__img");
   const popupText = popupImageElement.querySelector(".popup__text");
@@ -154,10 +177,11 @@ openPopupButton.addEventListener("click", () => handlePopupOpen(popupElement));
 openPopupButton.addEventListener("click", editProfile);
 closePopupButton.addEventListener("click", handlePopupClose);
 formElement.addEventListener("submit", handleProfileFormSubmit);
+formAddElement.addEventListener("submit", handleImageFormSubmit);
 openPopupAddButton.addEventListener("click", handlePopupAddOpen);
 closePopupAddButton.addEventListener("click", handlePopupAddClose);
 addCards();
-formAddElement.addEventListener("submit", handleImageFormSubmit);
+// formAddElement.addEventListener("submit", handleImageFormSubmit);
 closePopupImageButton.addEventListener("click", handlePopupImageClose);
 
 document.addEventListener("keydown", (event) => {

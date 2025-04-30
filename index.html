@@ -36,92 +36,80 @@
           <button class="profile__info-button-add"></button>
         </section>
         <section class="gallery"></section>
-        <section class="popup">
-          <div class="popup__container">
-            <h2 class="popup__form-title">Editar Perfil</h2>
-            <form class="popup__form">
-              <input
-                class="popup__form-name"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Nombre"
-                minlength="2"
-                maxlength="40"
-                required
-              />
-              <span
-                class="popup__form-name-message validation-message hidden-message"
-                >Please fill out this field</span
-              >
-              <input
-                class="popup__form-occupation"
-                type="text"
-                id="occupation"
-                name="occupation"
-                placeholder="Acerca de mi"
-                minlength="2"
-                maxlength="200"
-                required
-              />
-              <span
-                class="popup__form-occupation-message validation-message hidden-message"
-                >Please fill out this field</span
-              >
-              <button type="submit" disabled class="popup__form-button">
-                Guardar
-              </button>
-            </form>
-          </div>
-          <div class="popup__button-close"></div>
-        </section>
-        <section class="popup popup-add">
-          <div class="popup__container">
-            <h2 class="popup__form-title">Nuevo Lugar</h2>
-            <form class="popup-add__form">
-              <input
-                class="popup-add__form-name"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Título"
-                minlength="2"
-                maxlength="40"
-                required
-              />
-              <span
-                class="popup-add__form-name-message validation-message hidden-message"
-                >Please fill out this field</span
-              >
-              <input
-                class="popup-add__form-occupation"
-                type="url"
-                id="occupation"
-                name="occupation"
-                placeholder="Enlace a la imagen"
-                required
-              />
-              <span
-                class="popup-add__form-occupation-message validation-message hidden-message"
-                >URL no válida</span
-              >
-              <button type="submit" class="popup-add__form-button" disabled>
-                Guardar
-              </button>
-            </form>
-          </div>
-          <div class="popup-add__button-close"></div>
-        </section>
-        <div class="popup popup-image">
-          <div class="popup-image__container">
-            <div class="popup-image__button-close"></div>
-            <img class="popup__img" src="" alt="" />
-            <div class="popup__container-text">
-              <p class="popup__text"></p>
-            </div>
+      </main>
+      <div class="popup">
+        <div class="popup__container">
+          <h2 class="popup__form-title">Editar Perfil</h2>
+          <form class="popup__form">
+            <input
+              class="popup__form-input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombre"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="popup__error popup__error_name"></span>
+            <input
+              class="popup__form-input"
+              type="text"
+              id="occupation"
+              name="occupation"
+              placeholder="Acerca de mi"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="popup__error popup__error_occupation"></span>
+            <button type="submit" disabled class="popup__button">
+              Guardar
+            </button>
+          </form>
+        </div>
+        <div class="popup__button-close"></div>
+      </div>
+      <div class="popup popup-add" id="popup-add">
+        <div class="popup__container">
+          <h2 class="popup__form-title">Nuevo Lugar</h2>
+          <form class="popup__form" id="form-add">
+            <input
+              class="popup__form-input"
+              type="text"
+              id="description"
+              name="description"
+              placeholder="Título"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="popup__error popup__error_description"></span>
+            <input
+              class="popup__form-input"
+              type="url"
+              id="image"
+              name="image"
+              placeholder="Enlace a la imagen"
+              required
+            />
+            <span class="popup__error popup__error_image"></span>
+            <button type="submit" class="popup__button" disabled>
+              Guardar
+            </button>
+          </form>
+        </div>
+        <div class="popup-add__button-close"></div>
+      </div>
+      <div class="popup popup-image">
+        <div class="popup-image__container">
+          <div class="popup-image__button-close"></div>
+          <img class="popup__img" src="" alt="" />
+          <div class="popup__container-text">
+            <p class="popup__text"></p>
           </div>
         </div>
-      </main>
+      </div>
       <footer class="footer">
         <p class="footer__copyright">© 2024 Around The U.S.</p>
       </footer>
@@ -136,7 +124,7 @@
         </div>
       </div>
     </template>
-    <script src="./scripts/index.js" defer></script>
-    <script src="./scripts/validate.js" defer></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
