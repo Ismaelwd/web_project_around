@@ -20,6 +20,7 @@ const popupImageElement = document.querySelector(".popup-image");
 //Popup content
 const formElement = document.querySelector(".popup__form");
 const inputElement = document.querySelector(".popup__form-input");
+const formEditElement = document.querySelector("#form-edit");
 const formAddElement = document.querySelector("#form-add");
 const nameInput = document.querySelector("#name");
 const jobInput = document.querySelector("#occupation");
@@ -27,10 +28,8 @@ const descriptionInput = document.querySelector("#description");
 const imageInput = document.querySelector("#image");
 const submitButton = document.querySelector(".popup__button");
 
-//sección gallery
 const gallery = document.querySelector(".gallery");
 
-//Array de fotos
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -58,17 +57,14 @@ const initialCards = [
   },
 ];
 
-//función que abre el popup
 function handlePopupOpen(openPopup) {
   openPopup.classList.add("popup_opened");
 }
 
-//cierra
 function handlePopupClose() {
   popupElement.classList.remove("popup_opened");
 }
 
-//Da el contenido de texto del div.profile__content a las variables del formulario popup)
 function editProfile() {
   handlePopupOpen(popupElement);
   nameInput.value = displayName.textContent;
@@ -82,7 +78,6 @@ function handleProfileFormSubmit(evt) {
   handlePopupClose();
 }
 
-//mismo codigo de la forma pasada
 function handleImageFormSubmit(evt) {
   evt.preventDefault();
   const newCard = new Card(
@@ -95,12 +90,10 @@ function handleImageFormSubmit(evt) {
   handlePopupAddClose();
 }
 
-//Abre el popup-add
 function handlePopupAddOpen() {
   popupAddElement.classList.add("popup-add_opened");
 }
 
-//Cierra
 function handlePopupAddClose() {
   popupAddElement.classList.remove("popup-add_opened");
 }
