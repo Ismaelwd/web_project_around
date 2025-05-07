@@ -1,31 +1,30 @@
-# Tripleten web_project_homeland
+Tripleten web_project_around
+Proyecto 10 - Introducción a la Programación Orientada a Objetos
 
-Proyecto 9 - Manejo de objetos y eventos en Javascript
+El objetivo de este proyecto fue aplicar los principios fundamentales de la programación orientada a objetos (POO) en JavaScript, utilizando clases, objetos e interfaces para estructurar el código de manera modular, reutilizable y escalable. Se implementó una lógica robusta para gestionar dinámicamente tarjetas de contenido, incluyendo su creación, eliminación y la interacción con botones de "like" y "dislike".
 
-El objetivo de este proyecto es implementar y optimizar la lógica de programación en JavaScript para gestionar dinámicamente tarjetas de contenido, permitiendo su creación, eliminación y la interacción con botones de like y dislike.
+Durante el desarrollo del proyecto, se adquirieron conocimientos sobre la creación de clases e instancias, uso de métodos y propiedades, así como la implementación de interfaces para estructurar el comportamiento de los objetos. También se modularizó el código utilizando JavaScript modular (ES Modules) para mejorar la organización y mantenimiento del proyecto. La manipulación del DOM y el manejo de eventos se realizaron a través de métodos encapsulados en clases, garantizando una separación clara entre la lógica de datos y la interfaz de usuario.
 
-En este proyecto, se adquirieron conocimientos sobre el manejo de Arrays para almacenar tarjetas, Funciones para modularizar el código, Manipulación del DOM para actualizar la interfaz de usuario en tiempo real, y se utilizó el concepto de objetos para representar las tarjetas. También se implementaron técnicas de manejo de eventos para permitir la interacción del usuario, el uso de formularios para agregar nuevas tarjetas y validación de formularios para garantizar la correcta entrada de datos.
+Tecnologías utilizadas
+JavaScript Modular (ES Modules) para organizar el código en diferentes archivos reutilizables.
 
-## Tecnologías utilizadas
+Programación Orientada a Objetos con clases para representar tarjetas y sus comportamientos.
 
-- **JavaScript** para la manipulación del DOM.
-- **@font-face** para agregar y gestionar fuentes personalizadas.
-- **Figma** para definir la tipografía y dimensiones del diseño.
-- **Media Queries** para implementar un diseño responsivo adaptable a diferentes dispositivos.
-- **GitHub** como plataforma para el control de versiones y alojamiento del código.
-- **CSS Grid Layout** para estructurar la interfaz.
-- **Sombreados y degradados en CSS** para mejorar el diseño visual.
-- **Arrays** para almacenar y gestionar las tarjetas de contenido.
-- **Funciones** para agregar, eliminar y dar like o dislike a las tarjetas.
-- **Manipulación del DOM** para actualizar la lista de tarjetas en tiempo real.
+Interfaces en POO para definir contratos de funcionalidad entre componentes.
 
-- **Objetos** para representar las tarjetas de contenido con sus propiedades.
-- **Manejo de eventos** para manejar la interacción con los botones de like, dislike y los formularios.
-- **Trabajar con formularios** para capturar los datos del usuario y agregar nuevas tarjetas.
-- **Validacion de formularios** para asegurar que los datos ingresados sean correctos y completos antes de crear una nueva tarjeta.
+Manipulación del DOM para actualizar dinámicamente la interfaz de usuario.
 
-## Autor
+Manejo de eventos encapsulado dentro de clases para responder a la interacción del usuario.
 
-**Ismael**
+Formularios para agregar nuevas tarjetas mediante entrada de datos del usuario.
+
+Validación de formularios integrada en clases para asegurar entradas correctas.
+
+CSS Grid Layout y media queries para diseño responsivo adaptable a distintos dispositivos.
+
+GitHub como plataforma de control de versiones y despliegue del proyecto.
+
+Autor
+Ismael
 
 https://ismaelwd.github.io/web_project_around/
